@@ -3,6 +3,7 @@ package com.coderscampus.ThymeleafPractice.web;
 import com.coderscampus.ThymeleafPractice.domain.Person;
 import com.coderscampus.ThymeleafPractice.service.PersonService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,10 +29,9 @@ public class PersonController {
         model.put("person", person);
         return "people";
     }
-
 //    When doing a @PostMapping return a redirect
     @PostMapping("/persons")
-    public String postRootWebpage(Person person) {
+    public String postPerson(Person person) {
 //        controllers should only really interact with the models, views, and services
 //        so don't stick repo calls directly in them
         Person savedPerson = personService.save(person);
@@ -39,10 +39,15 @@ public class PersonController {
         return "redirect:/persons";
     }
 
-    @GetMapping("/people/{personId}")
+    @GetMapping("/persons/{personId}")
     public String getPerson(@PathVariable Long personId, ModelMap model) {
         Person person = personService.findById(personId);
         model.put("person", person);
         return "people";
+    }
+    @PostMapping("/persons/{personId}")
+    public String updatePerson(Person person) {
+        personService.save(person);
+        return "redirect:/persons/" + person.getId();
     }
 }
