@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to Scrungletown</h1>
+<!--    <div th:inline="text">Who's ready to cry about [[${firstName}]]</div>-->
+
+<!--    An alternative method to insert.  The th:text replaces the contents of the scope of the div.
+        It can be used with any tag.   -->
+<!--    <div th:text="|${firstName}: This life is amazing if you greet it with open arms~|"></div>-->
+
+<!--    Leaving action blank submits the form to the current url-->
+    <form action="" method="post">
+        <input type="hidden" th:field="${person.id}"/>
+        <div>
+            <label>First name: </label>
+            <input type="text" th:field="${person.firstName}"/>
+        </div>
+        <div>
+            <label>Last name: </label>
+            <input type="text" th:field="${person.lastName}"/>
+        </div>
+        <div>
+            <button>SubmitMe</button>
+        </div>
+    </form>
+</body>
+</html>
