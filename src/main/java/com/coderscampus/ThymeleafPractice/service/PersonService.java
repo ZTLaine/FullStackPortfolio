@@ -4,6 +4,8 @@ import com.coderscampus.ThymeleafPractice.domain.Person;
 import com.coderscampus.ThymeleafPractice.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 //Services should do the interacting with the repo
 @Service
 public class PersonService {
@@ -24,5 +26,13 @@ public class PersonService {
 
     public Person findById(Long personId) {
         return personRepository.findById(Math.toIntExact(personId));
+    }
+
+    public List<Person> findAll() {
+        return personRepository.findAll();
+    }
+
+    public void deletePerson(Integer personId) {
+        personRepository.deletePerson(personId);
     }
 }

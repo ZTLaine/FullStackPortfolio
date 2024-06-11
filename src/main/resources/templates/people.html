@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
@@ -13,6 +13,14 @@
 <!--    <div th:text="|${firstName}: This life is amazing if you greet it with open arms~|"></div>-->
 
 <!--    Leaving action blank submits the form to the current url-->
+
+
+    <div th:each="storedPerson : ${people}">
+        <span th:inline="text">
+            Person #[[${storedPerson.id}]]: [[${storedPerson.firstName}]] [[${storedPerson.lastName}]]
+        </span>
+    </div>
+    <hr th:if="${storedPerson == null}">
     <form action="" method="post">
         <input type="hidden" th:field="${person.id}"/>
         <div>
@@ -24,8 +32,11 @@
             <input type="text" th:field="${person.lastName}"/>
         </div>
         <div>
-            <button>SubmitMe</button>
+            <button>Submit</button>
         </div>
+    </form>
+    <form th:action="@{/persons/{personId}/delete(personId=${person.id})}" method="post" th:if="${person.id != null}">
+        <button>Delete</button>
     </form>
 </body>
 </html>
