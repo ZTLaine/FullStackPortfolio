@@ -9,13 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.coderscampus</groupId>
-    <artifactId>ThymeleafPractice</artifactId>
+    <artifactId>FullStackPortfolio</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ThymeleafPractice</name>
-    <description>Thymeleaf lessons</description>
+    <name>FullStackPortfolio</name>
+    <description>Full Stack Portfolio development</description>
     <properties>
         <java.version>22</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -1,4 +1,4 @@
-package com.coderscampus.ThymeleafPractice;
+package com.coderscampus.FullStackPortfolio.ThymeleafPractice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

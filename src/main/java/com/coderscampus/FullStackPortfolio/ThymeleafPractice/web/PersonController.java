@@ -1,9 +1,8 @@
-package com.coderscampus.ThymeleafPractice.web;
+package com.coderscampus.FullStackPortfolio.ThymeleafPractice.web;
 
-import com.coderscampus.ThymeleafPractice.domain.Person;
-import com.coderscampus.ThymeleafPractice.service.PersonService;
+import com.coderscampus.FullStackPortfolio.ThymeleafPractice.domain.Person;
+import com.coderscampus.FullStackPortfolio.ThymeleafPractice.service.PersonService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

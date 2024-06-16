@@ -1,4 +1,4 @@
-package com.coderscampus.ThymeleafPractice.domain;
+package com.coderscampus.FullStackPortfolio.ThymeleafPractice.domain;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.coderscampus.ThymeleafPractice.service;
+package com.coderscampus.FullStackPortfolio.ThymeleafPractice.service;
 
-import com.coderscampus.ThymeleafPractice.domain.Person;
-import com.coderscampus.ThymeleafPractice.repository.PersonRepository;
+import com.coderscampus.FullStackPortfolio.ThymeleafPractice.repository.PersonRepository;
+import com.coderscampus.FullStackPortfolio.ThymeleafPractice.domain.Person;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
