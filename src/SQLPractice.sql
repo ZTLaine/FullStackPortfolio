@@ -140,3 +140,12 @@ having count(*) > 1;
 
 -- having filters by the entire aggregated collection
 -- where filters the individual entries 
+
+--  Auto increment
+ALTER TABLE `transactions` 
+CHANGE COLUMN `transaction_id` `transaction_id` INT NOT NULL AUTO_INCREMENT;
+
+insert into transactions(transaction_date, amount, `type`, account_id)
+values ('2024-03-31 22:02', 92.79, 'D', 3);
+
+select * from transactions;
