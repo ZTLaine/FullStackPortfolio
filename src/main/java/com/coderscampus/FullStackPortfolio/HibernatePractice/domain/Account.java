@@ -14,9 +14,13 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;
 
-    @Column(length = 100)
-    private String accountName;
+    @ManyToMany(mappedBy = "accounts")
+    List<User> users = new ArrayList<>();
 
     @OneToMany(mappedBy = "account")
     private List<Transaction> transactions = new ArrayList<Transaction>();
+
+    @Column(length = 100)
+    private String accountName;
+
 }
