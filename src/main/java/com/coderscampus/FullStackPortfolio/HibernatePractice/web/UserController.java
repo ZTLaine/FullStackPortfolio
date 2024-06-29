@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Arrays;
 
@@ -30,5 +31,20 @@ public class UserController {
         User user = userService.findById(userId);
         model.addAttribute("users", Arrays.asList(user));
         return "users";
+    }
+
+    @GetMapping("/register")
+    public String getCreateUser(ModelMap model) {
+        model.addAttribute("users", new User());
+
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String postCreateUser(User user) {
+        System.out.println(user);
+        userService.createUser(user);
+
+        return "redirect:/register";
     }
 }
