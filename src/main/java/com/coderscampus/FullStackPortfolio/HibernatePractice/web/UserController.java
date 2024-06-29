@@ -30,7 +30,15 @@ public class UserController {
     public String getById(@PathVariable Long userId, ModelMap model) {
         User user = userService.findById(userId);
         model.addAttribute("users", Arrays.asList(user));
+        model.addAttribute("user", user);
         return "users";
+    }
+
+    @PostMapping("users/{userId}")
+    public String postById(@PathVariable Long userId, User user) {
+        userService.saveUser(user);
+
+        return "redirect:/users/" + user.getUserId();
     }
 
     @GetMapping("/register")
@@ -43,7 +51,7 @@ public class UserController {
     @PostMapping("/register")
     public String postCreateUser(User user) {
         System.out.println(user);
-        userService.createUser(user);
+        userService.saveUser(user);
 
         return "redirect:/register";
     }
