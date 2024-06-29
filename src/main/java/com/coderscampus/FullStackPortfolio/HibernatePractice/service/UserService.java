@@ -2,9 +2,11 @@ package com.coderscampus.FullStackPortfolio.HibernatePractice.service;
 
 import com.coderscampus.FullStackPortfolio.HibernatePractice.domain.User;
 import com.coderscampus.FullStackPortfolio.HibernatePractice.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserService {
 
     private UserRepository userRepo;

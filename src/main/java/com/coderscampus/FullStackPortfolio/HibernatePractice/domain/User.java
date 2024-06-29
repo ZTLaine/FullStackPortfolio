@@ -22,7 +22,7 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "account_id"))
     List<Account> accounts = new ArrayList<Account>();
 
-    @OneToOne(mappedBy = "address")
+    @OneToOne(mappedBy = "user")
     private Address address;
 
     private String username;
