@@ -5,6 +5,7 @@ import com.coderscampus.FullStackPortfolio.HibernatePractice.repository.UserRepo
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -20,6 +21,7 @@ public class UserService {
     }
 
     public User findById(Long id) {
-        return userRepo.findById(id).get();
+        Optional<User> userOpt = userRepo.findById(id);
+        return userOpt.orElse(new User());
     }
 }
