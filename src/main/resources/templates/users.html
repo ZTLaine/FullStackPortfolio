@@ -31,6 +31,9 @@
         <span th:text="${user.username}"></span>
         <span th:text="${user.name}"></span>
         <span th:text="${user.password}"></span>
+        <div th:each="account : ${user.accounts}">
+            <span th:text="${account.accountName}"></span>
+        </div>
         <hr/>
     </div>
 </body>

@@ -1,13 +1,15 @@
 package com.coderscampus.FullStackPortfolio.HibernatePractice.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity //Class name = User, DB Table name = user
 @Table(name = "users")
 public class User {

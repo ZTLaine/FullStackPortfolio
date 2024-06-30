@@ -21,6 +21,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByCreatedDateBetween(LocalDate startDate, LocalDate endDate);
 
 //    An example of a custom query, name does not need to exactly match a convention
+//    This particular one is a mess and actually just matches findByUserName() lol
     @Query("select u from User u where u.username = :username")
     List<User> findExactlyOneUserByUsername(String username);
 }
