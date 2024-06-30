@@ -2,6 +2,7 @@ package com.coderscampus.FullStackPortfolio.HibernatePractice.repository;
 
 import com.coderscampus.FullStackPortfolio.HibernatePractice.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -18,4 +19,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 //    Find * from users between the two dates
     List<User> findByCreatedDateBetween(LocalDate startDate, LocalDate endDate);
+
+//    An example of a custom query, name does not need to exactly match a convention
+    @Query("select u from User u where u.username = :username")
+    List<User> findExactlyOneUserByUsername(String username);
 }
