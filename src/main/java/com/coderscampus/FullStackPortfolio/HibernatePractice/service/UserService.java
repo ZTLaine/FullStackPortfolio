@@ -20,12 +20,16 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public User findById(Long id) {
-        Optional<User> userOpt = userRepo.findById(id);
+    public User findById(Long userId) {
+        Optional<User> userOpt = userRepo.findById(userId);
         return userOpt.orElse(new User());
     }
 
     public User saveUser(User user) {
         return userRepo.save(user);
+    }
+
+    public void deleteUser(Long userId) {
+        userRepo.deleteById(userId);
     }
 }

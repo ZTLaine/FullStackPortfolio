@@ -27,18 +27,26 @@ public class UserController {
     }
 
     @GetMapping("/users/{userId}")
-    public String getById(@PathVariable Long userId, ModelMap model) {
+    public String getUpdateUser(@PathVariable Long userId, ModelMap model) {
         User user = userService.findById(userId);
         model.addAttribute("users", Arrays.asList(user));
         model.addAttribute("user", user);
+
         return "users";
     }
 
     @PostMapping("users/{userId}")
-    public String postById(@PathVariable Long userId, User user) {
+    public String postUpdateUser(@PathVariable Long userId, User user) {
         userService.saveUser(user);
 
         return "redirect:/users/" + user.getUserId();
+    }
+
+    @PostMapping("users/{userId}/delete")
+    public String deleteOneUser(@PathVariable Long userId) {
+        userService.deleteUser(userId);
+
+        return "redirect:/users";
     }
 
     @GetMapping("/register")

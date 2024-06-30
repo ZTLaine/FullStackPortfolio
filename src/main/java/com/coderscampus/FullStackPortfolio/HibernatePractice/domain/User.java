@@ -3,6 +3,7 @@ package com.coderscampus.FullStackPortfolio.HibernatePractice.domain;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,4 +29,5 @@ public class User {
     private String username;
     private String password;
     private String name;
+    private LocalDate createdDate;
 }
