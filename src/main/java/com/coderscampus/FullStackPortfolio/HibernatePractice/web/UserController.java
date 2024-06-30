@@ -28,9 +28,9 @@ public class UserController {
 
     @GetMapping("/users/{userId}")
     public String getUpdateUser(@PathVariable Long userId, ModelMap model) {
-        User user = userService.findById(userId);
 //        This is here for testing and the whole finding by exactly one thing is a hot mess lol
 //        User user = userService.findExactlyOneUserByUsername("Ztl");
+        User user = userService.findById(userId);
         model.addAttribute("users", Arrays.asList(user));
         model.addAttribute("user", user);
 
