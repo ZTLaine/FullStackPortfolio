@@ -1,6 +1,8 @@
 package com.coderscampus.FullStackPortfolio.HibernatePractice.service;
 
+import com.coderscampus.FullStackPortfolio.HibernatePractice.domain.Account;
 import com.coderscampus.FullStackPortfolio.HibernatePractice.domain.User;
+import com.coderscampus.FullStackPortfolio.HibernatePractice.repository.AccountRepository;
 import com.coderscampus.FullStackPortfolio.HibernatePractice.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,11 @@ import java.util.Set;
 public class UserService {
 
     private UserRepository userRepo;
+    private AccountRepository accountRepo;
 
-    UserService(UserRepository userRepo) {
+    UserService(UserRepository userRepo, AccountRepository accountRepo) {
         this.userRepo = userRepo;
+        this.accountRepo = accountRepo;
     }
 
     public Set<User> findAll() {
@@ -28,6 +32,13 @@ public class UserService {
     }
 
     public User saveUser(User user) {
+        if(user.getUserId() == null){
+            Account checking = new Account();
+            checking.setAccountName("Checking");
+            checking.getUsers().add(user);
+            accountRepo.save(checking);
+            user.getAccounts().add(checking);
+        }
         return userRepo.save(user);
     }
 
