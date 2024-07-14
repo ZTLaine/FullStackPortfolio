@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Arrays;
+import java.util.Set;
 
 @Controller
 public class UserController {
@@ -21,7 +22,12 @@ public class UserController {
 
     @GetMapping("/users")
     public String getAllUsers(ModelMap model) {
+        //See assignment 13 for better fix. this is just to get the example working again
+        Set<User> users = userService.findAll();
         model.addAttribute("users", userService.findAll());
+        if(userService.findAll().size() == 1) {
+            model.addAttribute("user", users.iterator().next());
+        }
 
         return "users";
     }
