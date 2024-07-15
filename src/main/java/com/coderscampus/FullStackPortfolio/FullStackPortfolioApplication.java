@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FullStackPortfolioApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FullStackPortfolioApplication.class, args);
+        SpringApplication.run(FullStackPortfolioApplication.class, "--spring.profiles.active=mysql");
     }
 
 }

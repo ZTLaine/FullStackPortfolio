@@ -6,6 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JavascriptPracticeApplication {
     public static void main(String[] args) {
-        SpringApplication.run(JavascriptPracticeApplication.class, args);
+        SpringApplication.run(JavascriptPracticeApplication.class, "--spring.profiles.active=h2");
     }
 }
