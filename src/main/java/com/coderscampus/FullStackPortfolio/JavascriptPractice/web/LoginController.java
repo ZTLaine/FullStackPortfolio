@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-    @GetMapping("/home")
+    @GetMapping("/login")
     public String getLogin(ModelMap model){
         User user = new User();
         model.addAttribute("user", user);

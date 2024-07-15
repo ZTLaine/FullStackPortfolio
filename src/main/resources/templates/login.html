@@ -3,14 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <script type="text/javascript">
+        var name = 'Zack'
+        console.log('Hello world!')
+        console.log(`My name is ${name}`)
+
+        var dog = {
+            'name': `Pippin`,
+            'breed': 'Chihuahua',
+            'age': '2'
+        }
+
+        console.log(dog)
+
+
+    </script>
 </head>
 <body>
 <h1>Login below</h1>
 <div>
-    User: <input type="text" th:field="${user.username}"/>
+    Username: <input type="text" th:field="${user.username}"/>
 </div>
 <div>
     Password: <input type="password" th:field="${user.password}">
+</div>
+<div>
+    <button type="button" id="submitBtn">Submit</button>
+    <script type="text/javascript">
+        var submitBtn = document.querySelector("#submitBtn")
+        console.log("The submit button: ")
+        console.log(submitBtn)
+
+        submitBtn.addEventListener('click', submitBtnClick)
+
+        function submitBtnClick (){
+            alert(`Hey, I've been clicked!`)
+        }
+    </script>
 </div>
 </body>
 </html>
