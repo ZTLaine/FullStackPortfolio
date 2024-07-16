@@ -1,5 +1,6 @@
 var submitBtn = document.querySelector("#submitBtn")
 var usernameTextBox = document.querySelector("#username")
+var passwordTextBox = document.querySelector("#password")
 var users = []
 
 submitBtn.addEventListener('click', () => {
@@ -18,9 +19,9 @@ submitBtn.addEventListener('click', () => {
     }
 })
 
+// Passing using get fetch api request
 usernameTextBox.addEventListener('blur', () => {
-    fetch("http://localhost:8080/users/exists")
-        .then((response) => {
-            console.log(response)
-        })
+    fetch(`http://localhost:8080/users/exists?username=${usernameTextBox.value}&password=${passwordTextBox.value}`)
+        .then(response => response.json())
+        .then(data => console.log(data))
 })
