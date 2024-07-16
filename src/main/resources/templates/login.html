@@ -3,21 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <script type="text/javascript">
-        var name = 'Zack'
-        console.log('Hello world!')
-        console.log(`My name is ${name}`)
-
-        var dog = {
-            'name': `Pippin`,
-            'breed': 'Chihuahua',
-            'age': '2'
-        }
-
-        console.log(dog)
-
-
-    </script>
 </head>
 <body>
 <h1>Login below</h1>
@@ -29,17 +14,33 @@
 </div>
 <div>
     <button type="button" id="submitBtn">Submit</button>
-    <script type="text/javascript">
-        var submitBtn = document.querySelector("#submitBtn")
-        console.log("The submit button: ")
-        console.log(submitBtn)
-
-        submitBtn.addEventListener('click', submitBtnClick)
-
-        function submitBtnClick (){
-            alert(`Hey, I've been clicked!`)
-        }
-    </script>
 </div>
+<script type="text/javascript" src="/js/login.js">
+    // var submitBtn = document.querySelector("#submitBtn")
+    // // var usernameTextBox = document.querySelector("#username")
+    //
+    // submitBtn.addEventListener('click', () => {
+    //     var username = document.querySelector("#username")
+    //     var password = document.querySelector("#password")
+    //
+    //     if (username.value == '' || password.value == '') {
+    //         alert("Please enter a username and a password.")
+    //     } else {
+    //         console.log(`Inputs present, able to submit.`)
+    //     }
+    // })
+
+    // usernameTextBox.addEventListener('focus', () =>
+    //     console.log("The usernameTextBox has focus."))
+    //
+    // submitBtn.addEventListener('click', submitBtnClick)
+    // submitBtn.addEventListener('mouseover', function (){
+    //     alert(`Hey, I've been run over!`)
+    // })
+    //
+    // function submitBtnClick (){
+    //     alert(`Hey, I've been clicked!`)
+    // }
+</script>
 </body>
 </html>
