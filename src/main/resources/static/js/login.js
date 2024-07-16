@@ -20,5 +20,7 @@ submitBtn.addEventListener('click', () => {
 
 usernameTextBox.addEventListener('blur', () => {
     fetch("http://localhost:8080/users/exists")
-    console.log("Blur event!")
+        .then((response) => {
+            console.log(response)
+        })
 })

@@ -5,10 +5,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("/users")
 public class UserController {
-    @GetMapping("/user/exists")
+    @GetMapping("/exists")
     public Boolean Exists() {
+        return true;
+    }
+
+    @GetMapping("validateUsername")
+    public Boolean validateUsername(String username) {
+        return true;
+    }
+
+    @GetMapping("/validatePassword")
+    public Boolean validatePassword(String password) {
         return true;
     }
 }
