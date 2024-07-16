@@ -12,8 +12,8 @@ submitBtn.addEventListener('click', () => {
     } else {
         console.log(`Inputs present, able to submit.`)
         var user = {
-            "username" : username.value,
-            "password" : password.value
+            "username": username.value,
+            "password": password.value
         }
         users.push(user)
     }
@@ -21,7 +21,19 @@ submitBtn.addEventListener('click', () => {
 
 // Passing using get fetch api request
 usernameTextBox.addEventListener('blur', () => {
-    fetch(`http://localhost:8080/users/exists?username=${usernameTextBox.value}&password=${passwordTextBox.value}`)
+    var user = {
+        "username": usernameTextBox.value,
+        "password": passwordTextBox.value
+    }
+    // fetch(`http://localhost:8080/users/exists?username=${usernameTextBox.value}&password=${passwordTextBox.value}`)
+    fetch(`http://localhost:8080/users/exists`, {
+        method: "POST",
+        headers: {
+            // Makes sure it's sent as JSON instead of just text
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
         .then(response => response.json())
         .then(data => console.log(data))
 })
