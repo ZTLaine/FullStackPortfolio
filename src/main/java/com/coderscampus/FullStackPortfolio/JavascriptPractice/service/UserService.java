@@ -35,4 +35,11 @@ public class UserService {
         }
         return password.matches(regex);
     }
+
+    public void saveUser(User user) {
+        if (user == null) {
+            throw new IllegalArgumentException("User cannot be null");
+        }
+        userRepo.save(user);
+    }
 }
