@@ -37,3 +37,19 @@ usernameTextBox.addEventListener('blur', () => {
         .then(response => response.json())
         .then(data => console.log(data))
 })
+
+passwordTextBox.addEventListener('blur', () => {
+    var user = {
+        "username": usernameTextBox.value,
+        "password": passwordTextBox.value
+    }
+    fetch(`http://localhost:8080/users/passwordReqs`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+        .then((response => response.json()))
+            .then(data => console.log(data))
+})
