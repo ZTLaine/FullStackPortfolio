@@ -27,11 +27,11 @@ public class LoginController {
     @GetMapping("/register")
     public String getCreateUser(ModelMap model){
         User user = new User();
-        model.addAttribute("user", user);
+        model.addAttribute("users", user);
         return "register";
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public String postCreateUser(@ModelAttribute("user") User user){
         userService.saveUser(user);
         return "redirect:/login";
