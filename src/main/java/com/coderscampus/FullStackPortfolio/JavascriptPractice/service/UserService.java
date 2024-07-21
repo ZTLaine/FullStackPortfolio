@@ -18,15 +18,18 @@ public class UserService {
         userRepo.save(testUser);
     }
 
-    public Boolean doesUsernameExist(String username) {
-        if (username == null) {
-            throw new IllegalArgumentException("Username cannot be null");
-        }
-        List<User> foundUsername = userRepo.findByUsername(username);
-        if (foundUsername != null && foundUsername.isEmpty()) {
-            return false;
-        } else return true;
-    }
+//    public Boolean doesUsernameExist(String username) {
+//        if (username == null) {
+//            throw new IllegalArgumentException("Username cannot be null");
+//        }
+//        List<User> foundUsername = userRepo.findByUsername(username);
+//        if (foundUsername != null && foundUsername.isEmpty()) {
+//            return false;
+//        } else return true;
+//    }
+
+//    Trevor's version of this is much cleaner
+
 
     public Boolean arePasswordReqsMet(String password) {
         String regex = "^.{6,24}$";
@@ -41,5 +44,9 @@ public class UserService {
             throw new IllegalArgumentException("User cannot be null");
         }
         userRepo.save(user);
+    }
+
+    public User findByUsername(String username) {
+        return userRepo.findByUsername(username);
     }
 }

@@ -26,7 +26,9 @@ public class UserController {
 
     @PostMapping("/exists")
     public Boolean postExists(@RequestBody User user) {
-        return userService.doesUsernameExist(user.getUsername());
+        user = userService.findByUsername(user.getUsername());
+//        return userService.doesUsernameExist(user.getUsername());
+        return user != null;
     }
 
     @PostMapping("/passwordReqs")
