@@ -34,13 +34,13 @@ public class UserController {
         return userService.arePasswordReqsMet(user.getPassword());
     }
 
-    @GetMapping("validateUsername")
-    public Boolean validateUsername(String username) {
-        return true;
-    }
-
-    @GetMapping("/validatePassword")
-    public Boolean validatePassword(String password) {
-        return true;
-    }
+//    @GetMapping("validateUsername")
+//    public Boolean validateUsername(String username) {
+//        return true;
+//    }
+//
+//    @GetMapping("/validatePassword")
+//    public Boolean validatePassword(String password) {
+//        return true;
+//    }
 }
