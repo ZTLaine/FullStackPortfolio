@@ -18,21 +18,21 @@ public class LoginController {
     }
 
     @GetMapping("/login")
-    public String getLogin(ModelMap model){
+    public String getLogin(ModelMap model) {
         User user = new User();
         model.addAttribute("user", user);
         return "login";
     }
 
     @GetMapping("/register")
-    public String getCreateUser(ModelMap model){
+    public String getCreateUser(ModelMap model) {
         User user = new User();
-        model.addAttribute("users", user);
+        model.addAttribute("user", user);
         return "register";
     }
 
     @PostMapping("/register")
-    public String postCreateUser(@ModelAttribute("user") User user){
+    public String postCreateUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
         return "redirect:/login";
     }

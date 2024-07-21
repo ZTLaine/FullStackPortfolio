@@ -11,19 +11,20 @@
 <form action="" method="post">
     <div>
         <label>Username: </label>
-        <input type="text" th:field="${users.username}"/>
+        <input type="text" th:field="${user.username}"/>
     </div>
     <div>
         <label>Password: </label>
-        <input type="password" th:field="${users.password}"/>
+        <input type="password" th:field="${user.password}"/>
     </div>
     <div>
-        <label>Name: </label>
-        <input type="text" th:field="${users.name}"/>
+        <label>Confirm password: </label>
+        <input type="password" id="confirmPassword"/>
     </div>
-    <input type="submit" value="Submit"/>
+    <button>Create Account</button>
+    <!--    <input type="submit" value="Submit"/>-->
 
 </form>
-
+    <script type="text/javascript" src="/js/register.js"></script>
 </body>
 </html>

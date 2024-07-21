@@ -18,11 +18,11 @@ public class UserController {
         this.userRepo = userRepo;
     }
 
-    @GetMapping("/exists")
-    public Boolean Exists(String username, String password) {
-        System.out.println("username : " + username + " password : " + password);
-        return true;
-    }
+//    @GetMapping("/exists")
+//    public Boolean Exists(String username, String password) {
+//        System.out.println("username : " + username + " password : " + password);
+//        return true;
+//    }
 
     @PostMapping("/exists")
     public Boolean postExists(@RequestBody User user) {

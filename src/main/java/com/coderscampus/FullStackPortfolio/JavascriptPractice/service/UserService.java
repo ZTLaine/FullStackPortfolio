@@ -23,12 +23,12 @@ public class UserService {
             throw new IllegalArgumentException("Username cannot be null");
         }
         List<User> foundUsername = userRepo.findByUsername(username);
-        if(foundUsername != null && foundUsername.isEmpty()) {
+        if (foundUsername != null && foundUsername.isEmpty()) {
             return false;
         } else return true;
     }
 
-    public  Boolean arePasswordReqsMet(String password) {
+    public Boolean arePasswordReqsMet(String password) {
         String regex = "^.{6,24}$";
         if (password == null) {
             throw new IllegalArgumentException("Password cannot be null");

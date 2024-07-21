@@ -26,15 +26,14 @@ usernameTextBox.addEventListener('blur', () => {
         "password": passwordTextBox.value
     }
     // fetch(`http://localhost:8080/users/exists?username=${usernameTextBox.value}&password=${passwordTextBox.value}`)
-    fetch(`http://localhost:8080/users/exists`, {
-        method: "POST",
+    fetch('users/exists', {
+        method: 'POST',
         headers: {
             // Makes sure it's sent as JSON instead of just text
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-    })
-        .then(response => response.json())
+    }).then(response => response.json())
         .then(data => console.log(data))
 })
 
@@ -43,7 +42,7 @@ passwordTextBox.addEventListener('blur', () => {
         "username": usernameTextBox.value,
         "password": passwordTextBox.value
     }
-    fetch(`http://localhost:8080/users/passwordReqs`, {
+    fetch(`/users/passwordReqs`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
