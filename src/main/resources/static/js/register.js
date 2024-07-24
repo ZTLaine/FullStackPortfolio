@@ -42,9 +42,8 @@ passwordTextBox.addEventListener('blur', () => {
 
 confirmPasswordTextBox.addEventListener('blur', () => {
     if (confirmPasswordTextBox.value !== passwordTextBox.value) {
-        // alert("Passwords must match!")
         showErrorAnimation().then((message) => {
-            console.log("Now in the callback function!")
+            console.log(message)
         })
     } else {
         confirmPasswordTextBox.style.border = ``
@@ -53,16 +52,15 @@ confirmPasswordTextBox.addEventListener('blur', () => {
 
 function showErrorAnimation() {
     return new Promise((resolve, reject) => {
-        console.log("In animation function")
         var i = 255
         var animation = setInterval(() => {
-            i--
+            i -= 5
             confirmPasswordTextBox.style.border = `2px solid rgb(255, ${i}, ${i})`
             if (i <= 0) {
-                resolve("Done with animation code")
                 clearInterval(animation)
+                resolve("Done with animation code")
             }
-        }, 1)
+        }, 20)
     })
 }
 
