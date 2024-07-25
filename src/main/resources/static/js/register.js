@@ -29,19 +29,23 @@ usernameTextBox.addEventListener('blur', () => {
     var user = {
         'username': usernameTextBox.value
     }
-    fetch('users/exists', {
+    checkIfUserExists(user);
+})
+
+async function checkIfUserExists(user) {
+    let response = await fetch('users/exists', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
-    }).then((response => response.json()))
-        .then((data) => {
-            if (data === true) {
-                alert("This username is already taken!")
-            }
-        })
-})
+    })
+    let userExists = await response.json()
+
+    if(userExists === true){
+        alert("This username is already taken!")
+    }
+}
 
 passwordTextBox.addEventListener('blur', () => {
     var user = {
