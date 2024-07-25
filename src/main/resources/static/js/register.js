@@ -2,6 +2,29 @@ var usernameTextBox = document.querySelector('#username')
 var passwordTextBox = document.querySelector("#password")
 var confirmPasswordTextBox = document.querySelector("#confirmPassword")
 
+var eyeIcons = document.querySelectorAll('.fa-eye')
+
+eyeIcons.forEach((eyeIcon) => {
+    eyeIcon.addEventListener('click', () => {
+        // console.log(eyeIcon)
+        if(eyeIcon.classList.contains('fa-eye')){
+            eyeIcon.classList.replace('fa-eye', 'fa-eye-slash')
+            if (eyeIcon.getAttribute('id') === 'passwordEyeIcon'){
+                document.querySelector("#password").type = 'text'
+            } else {
+                document.querySelector("#confirmPassword").type = 'text'
+            }
+        } else {
+            eyeIcon.classList.replace('fa-eye-slash', 'fa-eye')
+            if (eyeIcon.getAttribute('id') === 'passwordEyeIcon'){
+                document.querySelector("#password").type = 'password'
+            } else {
+                document.querySelector("#confirmPassword").type = 'password'
+            }
+        }
+    })
+})
+
 usernameTextBox.addEventListener('blur', () => {
     var user = {
         'username': usernameTextBox.value
